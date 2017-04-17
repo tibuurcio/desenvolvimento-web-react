@@ -58,7 +58,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={[]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom", "slide"]}>
-          <Image src={images.jsgif} width={600}/>
+          <Image src={images.jsgif.replace("/", "")} width={600}/>
           <Heading size={1} fit caps lineHeight={1} textColor="white">
             Programação Web
           </Heading>
