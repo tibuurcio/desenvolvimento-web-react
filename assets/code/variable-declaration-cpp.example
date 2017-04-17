@@ -1,0 +1,5 @@
+int main() {
+  int numero = 10;
+  float decimal = 27.2;
+  char letra = 'a';
+}
