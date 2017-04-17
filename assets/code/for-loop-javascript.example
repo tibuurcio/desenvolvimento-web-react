@@ -1,0 +1,5 @@
+var vetor = [ 2, 3, 4, 5, 6 ];
+
+for(var i = 0; i < 5; i++) {
+  console.log("Índice: " + i + " Valor: " + vetor[i]);
+}

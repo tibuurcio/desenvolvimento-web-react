@@ -1,0 +1,33 @@
+var tweet = {
+    texto: "Javascript!",
+    usuario: {
+        nome: "Gabriel Tibúrcio",
+        username: "tibuurcio",
+        localizacao: "Natal, RN"
+    },
+    likes: {
+        quantidade: 3,
+        usuarios: ["tibuurcio", "judson", "daniel"]
+    }
+};
+
+console.log(tweet.texto); // "Javascript!"
+
+tweet.texto = "C++";
+console.log(tweet.texto); // "C++
+
+console.log(tweet.usuario.nome); // "Gabriel Tibúrcio"
+
+var usuarios = tweet.likes.usuarios;
+usuarios.forEach(function(usuario) {
+    console.log(usuario); // "tibuurcio", "judson", "daniel"
+});
+
+console.log(tweet.usuario['localizacao']); // "Natal, RN"
+
+var propriedades = ['nome', 'username', 'localizacao'];
+var usuario = tweet.usuario;
+
+propriedades.forEach(function(propriedade) {
+    console.log(usuario[propriedade]); // "Gabriel Tibúrcio", "tibuurcio", "Natal, RN"
+});
