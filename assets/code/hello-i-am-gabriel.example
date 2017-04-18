@@ -1,0 +1,9 @@
+console.log("Olá!");
+
+var ministrante = {
+    nome: "Gabriel Tibúrcio",
+    curso: "Ciências e Tecnologia",
+    engenharia: "Engenharia da Computação",
+    prazo_de_conclusao: undefined,
+    apps_usando_react: 2
+};
