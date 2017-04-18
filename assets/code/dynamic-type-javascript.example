@@ -1,0 +1,3 @@
+var foo = 42;    // foo is now a Number
+var foo = 'bar'; // foo is now a String
+var foo = true;  // foo is now a Boolean

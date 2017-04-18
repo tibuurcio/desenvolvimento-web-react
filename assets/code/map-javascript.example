@@ -1,0 +1,11 @@
+var numeros = [1, 5, 10, 15];
+var raizes = numeros.map(function(x) {
+   return x * 2;
+});
+// raizes: [2, 10, 20, 30]
+// numeros: [1, 5, 10, 15]
+
+var numeros = [1, 4, 9];
+var raizes = numeros.map(Math.sqrt);
+// raizes: [1, 2, 3]
+// numeros: [1, 4, 9]

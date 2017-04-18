@@ -1,0 +1,6 @@
+function isBigEnough(valor) {
+  return valor >= 10;
+}
+
+var filtrado = [12, 5, 8, 130, 44].filter(isBigEnough);
+// filtrado: [12, 130, 44]
