@@ -18,6 +18,7 @@ import {
   CodePane,
   Layout,
   Fill,
+  Fit,
   Table,
   TableRow,
   TableHeaderItem,
@@ -71,7 +72,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={[]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom", "slide"]}>
+        <Slide transition={["zoom", "fade"]}>
           <Image src={images.jsgif.replace("/", "")} width={600}/>
           <Heading size={1} fit caps lineHeight={1} textColor="white">
             Programação Web
@@ -81,13 +82,13 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide>
+        <Slide transition={["slide", "fade"]}>
           <Link textColor="white" target="_blank" href="https://nodejs.org/en/download/">Instalar Nodejs (Clique aqui)</Link><br/>
           <Link textColor="white" target="_blank" href="https://git-for-windows.github.io">Instalar Git (Clique aqui)</Link><br/>
           <Link textColor="white" target="_blank" href="https://www.sublimetext.com/3">Instalar o Sublime Text (Clique aqui)</Link>
         </Slide>
 
-        <Slide>
+        <Slide transition={["slide", "fade"]}>
           <Text textColor="white">Abrir o programa Git Bash (terminal)</Text>
           <Text textColor="white">Executar os seguintes comandos:</Text>
           <List>
@@ -98,11 +99,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide>
-          <ComponentPlayground theme="dark" code={buttonCode}/>
-        </Slide>
-
-        <Slide>
+        <Slide transition={["fade", "slide"]}>
           <Heading caps size={3} textColor="quartenary" margin={30}>Cronograma</Heading>
           <Layout>
             <Fill>
@@ -132,18 +129,21 @@ export default class Presentation extends React.Component {
           <Text textSize={18} textColor="white">Deploy no github</Text>
         </Slide>
 
-        <Slide><p>Me</p></Slide>
+        <Slide transition={["fade", "slide"]}>
+          <CodePane
+            textSize={30}
+            lang="js"
+            source={require("raw-loader!../assets/code/hello-i-am-gabriel.example")}
+            margin="20px auto"
+          />
+        </Slide>
 
-        <Slide><p>Client-Side</p><p>Server-Side</p></Slide>
+        <Slide>
+          <p>Client-Side</p>
+          <p>Server-Side</p>
+        </Slide>
 
-         <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="quartenary">
-              Apresentações interativas
-            </Heading>
-            <Interactive/>
-          </Slide>
-
-        <Slide transition={["slide"]} bgColor="black">
+        <Slide transition={["zoom", "fade", "spin"]} bgColor="black">
           <Heading caps lineHeight={1} textColor="white">
             Javascript
           </Heading>
@@ -157,11 +157,11 @@ export default class Presentation extends React.Component {
             </List>
         </Slide>
 
-        <Slide>
+        <Slide bgColor="black" transition={["fade", "slide"]}>
           <Image src={'https://cdn-images-1.medium.com/max/1600/1*fUxhG3xtbuyAH-NCPYs4lQ.png'} width={600}/>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black" notes={"Apenas recentemente empresas como " + 
+        <Slide transition={["fade", "slide"]} bgColor="black" notes={"Apenas recentemente empresas como " + 
           "Netflix, Walmart e Paypal começaram a construir aplicações inteiras utilizando Javascript. " + 
           "<br/><br/>Várias empresas estão contratando programadores Javascript."}>
           <Heading caps size={4} textColor="white">
@@ -172,7 +172,7 @@ export default class Presentation extends React.Component {
           <Appear><Image src={images.javascriptJobSearch.replace("/", "")} width={600}/></Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black" 
+        <Slide transition={["fade", "slide"]} bgColor="black" 
           notes={"Relação com Java que ao contrário de incentivar melhorias da" + 
           "comunidade processa empresas que tentam fazer melhorias"}>
           <Heading caps size={4} textColor="white">
@@ -183,7 +183,7 @@ export default class Presentation extends React.Component {
           <Appear><Image src={images.javascriptGrowing.replace("/", "")} width={600}/></Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black">
+        <Slide transition={["fade", "slide"]} bgColor="black">
           <Heading caps size={4} textColor="white">
             Curva de aprendizado
           </Heading>
@@ -191,7 +191,7 @@ export default class Presentation extends React.Component {
             Linguagens de script e de alto nível são mais fáceis de aprender. eg.: Javascript, Python, Ruby</Text></Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black">
+        <Slide transition={["fade", "slide"]} bgColor="black">
           <Heading caps size={5} textColor="white">
             Projetos que podemos construir
           </Heading>
@@ -206,7 +206,7 @@ export default class Presentation extends React.Component {
           </Text></Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black" textColor="primary">
+        <Slide transition={["fade", "slide"]} bgColor="black" textColor="primary">
           <BlockQuote>
             <Quote textColor="quartenary" textSize="40px">Qualquer aplicação que pode ser escrita em Javascript, eventualmente vai ser 
               escrita em Javascript.</Quote>
@@ -214,7 +214,7 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["spin", "fade", "zoom"]} bgColor="primary">
           <CodeComparation title="Declarando uma variável"
             languages={[
               {
@@ -230,7 +230,7 @@ export default class Presentation extends React.Component {
             ]}/>
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <Heading size={4} textColor="white">Tipagem fraca/dinâmica</Heading>
           <CodePane
             lang="javascript"
@@ -239,7 +239,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <CodeComparation title="Arrays"
             languages={[
               {
@@ -255,7 +255,7 @@ export default class Presentation extends React.Component {
             ]}/>
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <CodeComparation title="For loop"
             languages={[
               {
@@ -271,7 +271,7 @@ export default class Presentation extends React.Component {
             ]}/>
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <CodeComparation title="Funções"
             languages={[
               {
@@ -287,7 +287,7 @@ export default class Presentation extends React.Component {
             ]}/>
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <Heading size={5} textColor="white">Programação Funcional (Declarativa)</Heading>
           <Text textColor="white">Filter</Text>
           <CodePane
@@ -297,7 +297,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
+        <Slide transition={["slide", "fade"]} bgColor="primary">
           <Heading size={5} textColor="white">Programação Funcional (Declarativa)</Heading>
           <Text textColor="white">Map</Text>
           <CodePane
@@ -330,7 +330,14 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} align="center flex-start" bgImage={images.reactLogo.replace("/", "")}>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary">
+        {/*<Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} caps fit textColor="quartenary">
+              Apresentações interativas
+            </Heading>
+            <Interactive/>
+          </Slide>*/}
+
+        <Slide transition={["spin", "fade", "zoom"]} bgColor="secondary">
           <Heading size={3} textColor="white">React</Heading>
           <Layout>
             <Fill>
@@ -371,7 +378,7 @@ export default class Presentation extends React.Component {
           <ComponentPlayground theme="dark" code={buttonCode}/>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary" notes={"<ul>" + 
+        <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
             "<li>Como construir um app enorme?</li>" + 
             "<li>Composição: Encapsular funcionalidades eg.: Calendar, DatePicker</li>" + 
             "<li>Just JS: Melhor em JS, melhor em React, API Simples</li>" + 
@@ -395,27 +402,38 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide transition={["slide"]} notes={"<ul>" + 
+        <Slide transition={["slide", "fade"]} bgColor="black" notes={"<ul>" + 
             "<li>Ecossistema enorme devido a novas ferramentas sendo desenvolvidas a cada minuto</li>" + 
             "<li>Dificuldade na inicialização de um projeto, muitas configurações</li>" + 
-            "<li></li>" + 
-            "<li></li>" + 
+            "<li>npm: gerenciador de bibliotecas javascript</li>" + 
+            "<li>npm: gerenciador mais utilizado atualmente, muitos componentes react</li>" + 
+            "<li>cra: Criar apps React sem necessidade de configuração</li>" +  
           "</ul>"}>
-          <Heading size={3} textColor="quartenary">Ecossistema</Heading>
+          <Heading size={3} textColor="white">Ecossistema</Heading>
+          <Appear><Heading size={3} textColor="white">npm</Heading></Appear>
+          <Appear><Heading size={3} textColor="white">create-react-app</Heading></Appear>
+          <Appear><Code textColor="white">npm start</Code></Appear>
+          <Appear><Code textColor="white">npm run build</Code></Appear>
         </Slide>
 
-        <Slide transition={["slide"]}>
+        <Slide transition={["slide", "fade"]} bgColor="black">
           <Heading size={3} textColor="white">HTML + Javascript</Heading>
         </Slide>
 
         <Slide transition={["slide"]}>
           <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-          <Heading size={2} fit textColor="white" textFont="lobster">
+          <Heading size={2} fit textColor="quartenary" textFont="lobster">
             Wait what?
           </Heading>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="tertiary">
+         <Slide transition={["slide"]}>
+          <Heading size={1} textColor="quartenary">
+            Projeto
+          </Heading>
+        </Slide>
+
+        {/*<Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>Typography</Heading>
           <Heading size={1} textColor="secondary">Heading 1</Heading>
           <Heading size={2} textColor="secondary">Heading 2</Heading>
@@ -423,9 +441,9 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="secondary">Heading 4</Heading>
           <Heading size={5} textColor="secondary">Heading 5</Heading>
           <Text size={6} textColor="secondary">Standard text</Text>
-        </Slide>
+        </Slide>*/}
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        {/*<Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Standard List</Heading>
           <List>
             <ListItem>Item 1</ListItem>
@@ -433,14 +451,14 @@ export default class Presentation extends React.Component {
             <ListItem>Item 3</ListItem>
             <ListItem>Item 4</ListItem>
           </List>
-        </Slide>
+        </Slide>*/}
 
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        {/*<Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
           </BlockQuote>
-        </Slide>
+        </Slide>*/}
       </Deck>
     );
   }
