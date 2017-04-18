@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RaisedButton from 'material-ui/RaisedButton';
+import Tweet from './Tweet';
 
 const style = {
   margin: 12,
@@ -9,6 +10,8 @@ const style = {
 
 class App extends Component {
   render() {
+
+    const texto = "Javascript parece interessante, acho que todos deveriam aprender!";
     return (
       <div className="App">
         <div className="App-header">
@@ -17,8 +20,8 @@ class App extends Component {
         </div>
         <p className="App-intro">
           Para começar, edite <code>src/App.js</code> e salve o arquivo para recarregar.
-           <RaisedButton label="MaterialUI Button" primary={true} style={style}/>
-           <RaisedButton label="Button" secondary={true} style={style}/>
+          <RaisedButton label="MaterialUI Button" primary={true} style={style}/>
+          <RaisedButton label="Button" secondary={true} style={style}/>
         </p>
       </div>
     );
