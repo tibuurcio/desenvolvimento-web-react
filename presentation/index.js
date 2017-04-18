@@ -21,7 +21,9 @@ import {
   Table,
   TableRow,
   TableHeaderItem,
-  TableItem
+  TableItem,
+  Link,
+  Code
 } from "spectacle";
 
 import Playground from 'component-playground';
@@ -80,6 +82,23 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <Link textColor="white" target="_blank" href="https://nodejs.org/en/download/">Instalar Nodejs (Clique aqui)</Link><br/>
+          <Link textColor="white" target="_blank" href="https://git-for-windows.github.io">Instalar Git (Clique aqui)</Link><br/>
+          <Link textColor="white" target="_blank" href="https://www.sublimetext.com/3">Instalar o Sublime Text (Clique aqui)</Link>
+        </Slide>
+
+        <Slide>
+          <Text textColor="white">Abrir o programa Git Bash (terminal)</Text>
+          <Text textColor="white">Executar os seguintes comandos:</Text>
+          <List>
+            <ListItem><Code textSize={20} textColor="white">git clone https://github.com/tibuurcio/desenvolvimento-web-react</Code><br/></ListItem>
+            <ListItem><Code textColor="white">cd desenvolvimento-web-react</Code><br/></ListItem>
+            <ListItem><Code textColor="white">npm install</Code><br/></ListItem>
+            <ListItem><Code textColor="white">npm start</Code></ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
           <ComponentPlayground theme="dark" code={buttonCode}/>
         </Slide>
 
@@ -90,10 +109,10 @@ export default class Presentation extends React.Component {
               <Text bold textSize={24} textColor="white">Dia 1</Text>
               <Text textSize={18} textColor="white">Um pouco sobre Javascript</Text>
               <Text textSize={18} textColor="white">Motivação</Text>
-              <Text textSize={18} textColor="white">Funcionalidades</Text>
               <Text textSize={18} textColor="white">React</Text>
+              <Text textSize={18} textColor="white">Componente Button</Text>
+              <Text textSize={18} textColor="white">Fundamentos</Text>
               <Text textSize={18} textColor="white">create-react-app</Text>
-              <Text textSize={18} textColor="white">Primeiro componente</Text>
             </Fill>
             <Fill>
               <Text bold textSize={24} textColor="white">Dia 2</Text>
@@ -289,23 +308,23 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <CodeSlide transition={[]}
-            lang="jsx" textSize={20}
+            lang="jsx" textSize={30}
             code={require("raw-loader!../assets/code/javascript-tweet-object.example")}
             ranges={[
-              { loc: [0, 0], title: "Objetos em Javascript" },
+              { loc: [0, 0], title: "Objetos Javascript" },
               { loc: [0, 12], title: "Tweet", note: "Formato JSON" },
               { loc: [1, 2], title: "String" },
               { loc: [2, 7], title: "Objeto" },
               { loc: [8, 9], title: "Número" },
               { loc: [9, 10], title: "Array" },
               { loc: [0, 12] },
-              { loc: [13, 14], title: "Acessando propriedades do objeto" },
-              { loc: [15, 17], title: "Modificando propriedades" },
+              { loc: [13, 14], note: "Acessando propriedades do objeto" },
+              { loc: [15, 17], note: "Modificando propriedades" },
               { loc: [18, 19] },
-              { loc: [20, 24], title: "Loop pela propriedade que é um array" },
-              { loc: [25, 26], title: "Acessar propriedades dinamicamente" },
-              { loc: [27, 33], title: "Loop pelas propriedades dinamicamente" },
-              { loc: [0, 33] , title: "Objetos em Javascript" }
+              { loc: [20, 24], note: "Loop pela propriedade que é um array" },
+              { loc: [25, 26], note: "Acessar propriedades dinamicamente" },
+              { loc: [27, 33], note: "Loop pelas propriedades dinamicamente" },
+              { loc: [0, 33] , title: "Objetos Javascript" }
             ]}/>
 
         <Slide transition={["fade"]} align="center flex-start" bgImage={images.reactLogo.replace("/", "")}>
@@ -334,6 +353,22 @@ export default class Presentation extends React.Component {
               <Appear><Image src={images.mostPopularProjects2016.replace("/", "")} width={400}/></Appear>
             </Fill>
           </Layout>
+        </Slide>
+
+        <CodeSlide transition={[]}
+            lang="jsx" textSize={30}
+            code={require("raw-loader!../assets/code/react-component-button.example")}
+            ranges={[
+              { loc: [0, 0], title: "Componente React" },
+              { loc: [0, 1], title: "Definição" },
+              { loc: [11, 22], title: "Método render" },
+              { loc: [1, 5], title: "Construtor", note: "Estado Inicial" },
+              { loc: [6, 10], title: "Métodos", note: "Como qualquer outro objeto pode ter" },
+              { loc: [6, 22] },
+            ]}/>
+
+        <Slide>
+          <ComponentPlayground theme="dark" code={buttonCode}/>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" notes={"<ul>" + 

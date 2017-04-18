@@ -2,29 +2,27 @@ export const buttonCode = `
 class Button extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { clicadas: 0 };
+    this.state = { contador: 0 };
   } 
 
   clicou() {
-    let clicadas = this.state.clicadas;
-    clicadas++;
-    this.setState({clicadas: clicadas});
+    let clicadas = this.state.contador + 1;
+    this.setState({ contador: clicadas });
   }
 
   render() {
     return(
       <div>
-        <button
-        onClick={() => this.clicou()}>
-        { this.props.texto }
+        <button onClick={() => this.clicou()}>
+        { this.props.texto + ' ' + 
+          this.state.contador + ' vezes' }
         </button>
-        <p>Clicadas: {this.state.clicadas}</p>
       </div>
     );
   }
 }
 
 ReactDOM.render(
-  <Button texto="Clique-me"/>, 
+  <Button texto="Clicou"/>, 
 mountNode);
 `;
