@@ -44,7 +44,7 @@ var tweets = [{
     foto: "http://placehold.it/100x100"
 	},
 	data_publicacao: "20/04/2017",
-	texto: "Esses jovens de hoje em dia, não sabem o que é programar em C++.",
+	texto: "Prefiro C++",
 	likes: {
 		total: 0,
 		usuarios: []
