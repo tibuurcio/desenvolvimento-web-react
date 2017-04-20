@@ -448,8 +448,8 @@ export default class Presentation extends React.Component {
           <Slide transition={["slide", "fade"]}>
             <Heading size={4} textColor="white">Dia 2</Heading>
             <List>
-              <ListItem textColor="white" textSize={24}>Um pouco sobre o funcionamento do terminal, git e github</ListItem>
               <ListItem textColor="white" textSize={24}>Evolução da web, melhores práticas, história do react</ListItem>
+              <ListItem textColor="white" textSize={24}>Um pouco sobre o funcionamento do terminal, git e github</ListItem>
               <ListItem textColor="white" textSize={24}>Revisando JSX, create-react-app e npm</ListItem>
               <ListItem textColor="white" textSize={24}>Implementando um componente Tweet</ListItem>
             </List>
@@ -651,10 +651,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           {/* Adicionar explicação do create-react-app */}
-
-          {/* Falar sobre github e git quando estar falando sobre o terminal */}
-
-          {/* Fazer exemplo de tweet na mão */}
 
           {/* Implementar componentes interessantes na apresentação */}
 
