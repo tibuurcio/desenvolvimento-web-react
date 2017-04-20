@@ -7,9 +7,13 @@ export default class CodeComparation extends React.Component {
   render() {
     return (
       <div>
-        <Heading size={4} textColor="white">
-          {this.props.title}
-        </Heading>
+        {
+          this.props.title && 
+          <Heading size={4} textColor="white" textFont={this.props.titleFont || 'primary'}>
+            {this.props.title}
+          </Heading>
+        }
+        
         <Layout>
           <Fill style={{marginRight: '10px'}}>
             <Heading size={6} textColor="white">{this.props.languages[0].name}</Heading>
