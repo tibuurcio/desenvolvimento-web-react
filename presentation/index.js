@@ -545,19 +545,43 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
-              "<li>on-demand: </li>" + 
-              "<li>Não precisa baixar, segurança, updates instantâneos</li>" + 
+              "<li>App front-end mais complicado do facebook, haviam 2 pessoas que conheciam</li>" + 
+              "<li>Instagram - Primeiro single page app usando React</li>" + 
+              "<li>Facebook Ads todo com react, app muito importante para o facebook. Movimento bilhões de dólares</li>" + 
             "</ul>"}>
-            <Heading size={3} textColor="white" textFont="lobster">A web</Heading>
+            <Heading size={3} textColor="white" textFont="lobster">React</Heading>
             <List>
               <Appear><ListItem textSize={30} textColor="white">
-                      Porque construir apps pra web</ListItem></Appear>
+                      Facebook precisava desenvolver apps multiplataforma</ListItem></Appear>
               <Appear><ListItem textSize={30} textColor="white">
-                      Melhor experiência para o usuário?</ListItem></Appear>
+                      Final 2011: Facebook Ads</ListItem></Appear>
               <Appear><ListItem textSize={30} textColor="white">
-                      Fácil de encontrar?</ListItem></Appear>
+                      Fax.js</ListItem></Appear>
               <Appear><ListItem textSize={30} textColor="white">
-                      Apps on-demand</ListItem></Appear>
+                      Começo de 2012: Like e comentários</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Meio de 2012: Instagram</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Final 2012: Facebook Ads</ListItem></Appear>
+                      
+            </List>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
+              "<li>App front-end mais complicado do facebook, haviam 2 pessoas que conheciam</li>" + 
+              "<li>Instagram - Primeiro single page app usando React</li>" + 
+              "<li>Facebook Ads todo com react, app muito importante para o facebook. Movimento bilhões de dólares</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">React</Heading>
+            <List>
+              <Appear><ListItem textSize={30} textColor="white">
+                      2013: Open-source</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Feedback negativo</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Status Quo</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      2016: Javascript Fatigue</ListItem></Appear>
             </List>
           </Slide>
 
@@ -626,11 +650,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          {/* Adicionar história da web e história do react na apresentação */}
-
           {/* Adicionar explicação do create-react-app */}
-
-          {/* Melhorar exemplos do JSX utilizando a documentação do react */}
 
           {/* Falar sobre github e git quando estar falando sobre o terminal */}
 
