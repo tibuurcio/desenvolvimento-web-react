@@ -77,6 +77,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={[]} transitionDuration={500} theme={theme}>
+        
           <Slide transition={["zoom", "fade"]}>
             <Image src={images.jsgif.replace("/", "")} width={600}/>
             <Heading size={1} fit caps lineHeight={1} textColor="white">
@@ -528,8 +529,8 @@ export default class Presentation extends React.Component {
               "<li>Experiência do usuário é um pouco melhor, muda o que precisa mudar</li>" + 
               "<li>Ainda é difícil de construir aplicações complexas, 2 partes que dependem da mesma info, difícil sincronizar.Performance não é ruim, carregar HTML não demora.</li>" + 
             "</ul>"}>
-            <Heading size={3} textColor="white" textFont="lobster">Renderização no servidor + Ajax</Heading>
-            <Image src={images.web2010.replace("/", "")} width={1000}/>
+            <Heading size={3} textColor="white" textFont="lobster">Servidor + Ajax</Heading>
+            <Image src={images.web2010.replace("/", "")} width={800}/>
           </Slide>
 
           <Slide bgColor="black" transition={["fade", "slide"]} notes={"<ul>" + 
