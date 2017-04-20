@@ -34,7 +34,6 @@ import CodeSlide from 'spectacle-code-slide';
 import CodeComparation from './CodeComparation';
 import Interactive from './Interactive';
 import EnqueteFirebase from './EnqueteFirebase';
-import FirePad from './FirePad';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -68,7 +67,8 @@ const theme = createTheme({
   lobster: "Lobster Two"
 });
 
-import { buttonCode } from "../assets/code/playground.button";
+import { buttonCode } from "../assets/code/playground.codes";
+import { jsxExample } from "../assets/code/playground.codes";
 
 export default class Presentation extends React.Component {
   render() {
@@ -450,7 +450,7 @@ export default class Presentation extends React.Component {
             <Heading size={4} textColor="white">Dia 2</Heading>
             <List>
               <ListItem textColor="white" textSize={24}>Um pouco sobre o funcionamento do terminal</ListItem>
-              <ListItem textColor="white" textSize={24}>Revisando create-react-app e npm</ListItem>
+              <ListItem textColor="white" textSize={24}>Revisando JSX, create-react-app e npm</ListItem>
               <ListItem textColor="white" textSize={24}>Evolução da web, melhores práticas, história do react</ListItem>
               <ListItem textColor="white" textSize={24}>Por trás do create-react-app</ListItem>
               <ListItem textColor="white" textSize={24}>Apresentação do projeto final</ListItem>
@@ -495,6 +495,18 @@ export default class Presentation extends React.Component {
               ]}/>
           </Slide>
 
+          <CodeSlide transition={[]}
+              lang="jsx" textSize={30}
+              code={require("raw-loader!../assets/code/jsx-code.example")}
+              ranges={[
+                { loc: [0, 0], title: "JSX" },
+                { loc: [0, 3], note: "Define uma função para formatar um objeto usuário" },
+                { loc: [4, 8], note: "Define um objeto usuário" },
+                { loc: [9, 14], note: "Define o elemento JSX" },
+                { loc: [15, 24], note: "Usa o componente na função render" },
+                { loc: [25, 32] },
+              ]}/>
+
           <Slide transition={["spin", "fade", "zoom"]}>
             <CodeComparation
               languages={[
@@ -512,13 +524,24 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <FirePad/>
-          </Slide>
-
-          <Slide>
             <Heading textColor="white">Projeto</Heading>
           </Slide>
 
+          {/* Adicionar história da web e história do react na apresentação */}
+
+          {/* Adicionar explicação do create-react-app */}
+
+          {/* Melhorar exemplos do JSX utilizando a documentação do react */}
+
+          {/* Falar sobre github e git quando estar falando sobre o terminal */}
+
+          {/* Fazer exemplo de tweet na mão */}
+
+          {/* Implementar componentes interessantes na apresentação */}
+
+          {/* Adicionar referências na apresentação e no github */}
+
+          {/* Buscar e instalar um componente do npm */}
         </Deck>
     );
   }

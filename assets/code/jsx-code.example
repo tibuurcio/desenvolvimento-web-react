@@ -1,0 +1,32 @@
+function formatarUsuario(usuario) {
+  return usuario.nome + ' ' + usuario.sobrenome;
+}
+
+var usuario = {
+  nome: 'Gabriel',
+  sobrenome: 'Tiburcio'
+};
+
+var elemento = (
+  <h1>
+    Olá {formatarUsuario(usuario)}!
+  </h1>
+);
+
+class Componente extends React.Component {
+    render() {
+        return(
+            <div>
+                { elemento }
+            </div>
+        );
+    }
+}
+
+function getSaudacoes(usuario) {
+  if (usuario.logado) {
+    return 
+        <h1>Olá {formatarUsuario(usuario)}!</h1>;
+  }
+  return <h1>Olá estranho.</h1>;
+}
