@@ -26,3 +26,30 @@ ReactDOM.render(
   <Button texto="Clicou"/>, 
 mountNode);
 `;
+
+export const jsxExample = `
+class JSXExample extends React.Component {
+
+  formatarUsuario(usuario) {
+  	return usuario.nome + ' ' + 
+    usuario.sobrenome;
+  }
+  
+  render() {
+    return(
+      <div>
+        <p>
+        {() => this.formatarUsuario(this.props.usuario)}
+        </p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <div>
+    <JSXExample usuario={ nome: "Gabriel", sobrenome: "Tiburcio" }/>
+  </div>, 
+  mountNode);
+`;
+

@@ -68,7 +68,8 @@ const theme = createTheme({
   lobster: "Lobster Two"
 });
 
-import { buttonCode } from "../assets/code/playground.button";
+import { buttonCode } from "../assets/code/playground.codes";
+import { jsxExample } from "../assets/code/playground.codes";
 
 export default class Presentation extends React.Component {
   render() {
@@ -495,6 +496,10 @@ export default class Presentation extends React.Component {
               ]}/>
           </Slide>
 
+          <Slide>
+            <ComponentPlayground theme="dark" code={jsxExample}/>
+          </Slide>
+
           <Slide transition={["spin", "fade", "zoom"]}>
             <CodeComparation
               languages={[
@@ -519,6 +524,21 @@ export default class Presentation extends React.Component {
             <Heading textColor="white">Projeto</Heading>
           </Slide>
 
+          {/* Adicionar história da web e história do react na apresentação */}
+
+          {/* Adicionar explicação do create-react-app */}
+
+          {/* Melhorar exemplos do JSX utilizando a documentação do react */}
+
+          {/* Falar sobre github e git quando estar falando sobre o terminal */}
+
+          {/* Fazer exemplo de tweet na mão */}
+
+          {/* Implementar componentes interessantes na apresentação */}
+
+          {/* Adicionar referências na apresentação e no github */}
+
+          {/* Buscar e instalar um componente do npm */}
         </Deck>
     );
   }

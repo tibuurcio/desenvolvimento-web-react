@@ -1,0 +1,14 @@
+var usuario = {
+  nome: 'Gabriel',
+  sobrenome: 'Tiburcio'
+};
+
+function formatarUsuario(usuario) {
+  return usuario.nome + ' ' + usuario.sobrenome;
+}
+
+var elemento = (
+  <h1>
+    Olá { formatarUsuario(usuario) }!
+  </h1>
+);
