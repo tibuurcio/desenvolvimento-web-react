@@ -1,0 +1,5 @@
+var elemento = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
