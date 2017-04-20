@@ -5,15 +5,11 @@ import './index.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-injectTapEventPlugin();
-
-const Container = () => (
-	<MuiThemeProvider>
-		<App/>
-	</MuiThemeProvider>
-);
+injectTapEventPlugin(); //Necessário para os componentes material-ui
 
 ReactDOM.render(
-  <Container/>,
+	<MuiThemeProvider>
+		<App/>
+	</MuiThemeProvider>,
   document.getElementById('root')
 );
