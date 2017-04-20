@@ -29,26 +29,29 @@ mountNode);
 
 export const jsxExample = `
 class JSXExample extends React.Component {
-
-  formatarUsuario(usuario) {
-  	return usuario.nome + ' ' + 
-    usuario.sobrenome;
-  }
-  
   render() {
+
+    var usuario = {
+      nome: "Gabriel",
+      sobrenome: "Tiburcio"
+    };
+
     return(
       <div>
-        <p>
-        {() => this.formatarUsuario(this.props.usuario)}
-        </p>
+        <p>{formatarUsuario(usuario)}</p>
       </div>
     );
   }
 }
 
+formatarUsuario(usuario) {
+  return usuario.nome + ' ' + 
+  usuario.sobrenome;
+}
+
 ReactDOM.render(
   <div>
-    <JSXExample usuario={ nome: "Gabriel", sobrenome: "Tiburcio" }/>
+    <JSXExample />
   </div>, 
   mountNode);
 `;
