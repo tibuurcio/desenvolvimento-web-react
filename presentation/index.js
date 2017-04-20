@@ -52,7 +52,10 @@ const images = {
   reactLogo: require("../assets/imgs/react-logo.png"),
   javascriptJobSearch: require("../assets/imgs/javascript-job-search.png"),
   javascriptGrowing: require("../assets/imgs/javascript-growing.png"),
-  mostPopularProjects2016: require("../assets/imgs/most-popular-projects-2016.png")
+  mostPopularProjects2016: require("../assets/imgs/most-popular-projects-2016.png"),
+  web2000: require("../assets/imgs/web2000.png"),
+  web2010: require("../assets/imgs/web2010.png"),
+  web2013: require("../assets/imgs/web2013.png")
 };
 
 preloader(images);
@@ -441,19 +444,12 @@ export default class Presentation extends React.Component {
             </Text>
           </Slide>
 
-          <Slide transition={["slide"]}>
-            <EnqueteFirebase pergunta="Você teve tempo de praticar em casa os conteúdos da aula de terça? :)"
-              identificador="tempo-pratica"/>
-          </Slide>
-
           <Slide transition={["slide", "fade"]}>
             <Heading size={4} textColor="white">Dia 2</Heading>
             <List>
-              <ListItem textColor="white" textSize={24}>Um pouco sobre o funcionamento do terminal</ListItem>
-              <ListItem textColor="white" textSize={24}>Revisando JSX, create-react-app e npm</ListItem>
+              <ListItem textColor="white" textSize={24}>Um pouco sobre o funcionamento do terminal, git e github</ListItem>
               <ListItem textColor="white" textSize={24}>Evolução da web, melhores práticas, história do react</ListItem>
-              <ListItem textColor="white" textSize={24}>Por trás do create-react-app</ListItem>
-              <ListItem textColor="white" textSize={24}>Apresentação do projeto final</ListItem>
+              <ListItem textColor="white" textSize={24}>Revisando JSX, create-react-app e npm</ListItem>
               <ListItem textColor="white" textSize={24}>Implementando um componente Tweet</ListItem>
             </List>
           </Slide>
@@ -467,6 +463,101 @@ export default class Presentation extends React.Component {
             <Heading size={1} textColor="quartenary">
               Terminal
             </Heading>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
+              "<li>on-demand: </li>" + 
+              "<li>Não precisa baixar, segurança, updates instantâneos</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">A web</Heading>
+            <List>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Porque construir apps pra web</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Melhor experiência para o usuário?</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Fácil de encontrar?</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Apps on-demand</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={["fade", "slide"]} bgColor="black" textColor="primary">
+            <BlockQuote>
+              <Quote textColor="quartenary" textSize="40px">Make it work, make it right, make it fast.</Quote>
+              <Cite>Kent Beck</Cite>
+            </BlockQuote>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
+              "<li>Complexidade para desenvolver aplicações</li>" + 
+              "<li>Rodam direito em diferentes browsers</li>" + 
+              "<li>Visualmente bem em centenas de dispositivos</li>" + 
+              "<li>Carreguem rápido o suficiente para o passageiro impaciente no ônibus</li>" + 
+              "<li>Acessível o suficiente para que deficientes visuais possam usar</li>" + 
+              "<li>Visualmente bem em centenas de dispositivos</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">Web, amor e ódio.</Heading>
+            <Appear>
+              <BlockQuote>
+              <Quote textColor="quartenary" textSize="40px">We are trying to build applications that run right in a dozen browsers, 
+                look good on thousands of different devices, load fast enough for impatient commuters in the subway, 
+                and are still accessible enough that blind people can use them.</Quote>
+              <Cite>Quincy Larson</Cite>
+            </BlockQuote>
+            </Appear>
+          </Slide>
+
+          <Slide bgColor="black" transition={["fade", "slide"]} notes={"<ul>" + 
+              "<li>Usuário faz uma ação (clicar em um link ou enviar um formulário)</li>" + 
+              "<li>Requisição ao servidor, resposta página HTML completa</li>" + 
+              "<li>Browser redesenha a tela e scroll até o topo</li>" + 
+              "<li>Usuário pode mexer novamente</li>" + 
+              "<li>Performance não é ruim, carregar HTML não demora.</li>" + 
+              "<li>Não é simples construir interfaces complexas</li>" + 
+              "<li>Cada interação deve esperar um full reload</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">Renderização no servidor (2000)</Heading>
+            <Image src={images.web2000.replace("/", "")} width={1000}/>
+          </Slide>
+
+          <Slide bgColor="black" transition={["fade", "slide"]} notes={"<ul>" + 
+              "<li>Usuário faz uma ação</li>" + 
+              "<li>Requisição ao servidor, resposta é o HTML de uma pequena parte do app</li>" + 
+              "<li>Muito rápido (não faz full reload)</li>" + 
+              "<li>Experiência do usuário é um pouco melhor, muda o que precisa mudar</li>" + 
+              "<li>Ainda é difícil de construir aplicações complexas, 2 partes que dependem da mesma info, difícil sincronizar.Performance não é ruim, carregar HTML não demora.</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">Renderização no servidor + Ajax</Heading>
+            <Image src={images.web2010.replace("/", "")} width={1000}/>
+          </Slide>
+
+          <Slide bgColor="black" transition={["fade", "slide"]} notes={"<ul>" + 
+              "<li>O jeito recomendado de fazer aplicações nos últimos 3 anos</li>" + 
+              "<li>A sua página HTML contém poucos elementos</li>" + 
+              "<li>Faz o download de arquivos javascript e quando finalizar, renderiza a interface no browser do cliente.</li>" + 
+              "<li>Melhor experiência para o usuário, não depende do servidor para responder a ações do usuário (Servidor está em uma internet ruim)</li>" + 
+              "<li>Demora mais pra carregar</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">Single Page Apps</Heading>
+            <Image src={images.web2013.replace("/", "")} width={1000}/>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary" notes={"<ul>" + 
+              "<li>on-demand: </li>" + 
+              "<li>Não precisa baixar, segurança, updates instantâneos</li>" + 
+            "</ul>"}>
+            <Heading size={3} textColor="white" textFont="lobster">A web</Heading>
+            <List>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Porque construir apps pra web</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Melhor experiência para o usuário?</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Fácil de encontrar?</ListItem></Appear>
+              <Appear><ListItem textSize={30} textColor="white">
+                      Apps on-demand</ListItem></Appear>
+            </List>
           </Slide>
 
           <Slide transition={["fade", "slide"]}>
@@ -523,8 +614,15 @@ export default class Presentation extends React.Component {
               ]}/>
           </Slide>
 
-          <Slide>
-            <Heading textColor="white">Projeto</Heading>
+          <Slide transition={["slide", "fade"]}>
+            <Heading size={4} textColor="white">Dia 3</Heading>
+            <List>
+              <ListItem textColor="white" textSize={24}>Exemplos de componentes</ListItem>
+              <ListItem textColor="white" textSize={24}>Por trás do create-react-app</ListItem>
+              <ListItem textColor="white" textSize={24}>Requisições http</ListItem>
+              <ListItem textColor="white" textSize={24}>Requisitando nossos tweets do servidor</ListItem>
+              <ListItem textColor="white" textSize={24}>Criando o componente para enviar novos tweets</ListItem>
+            </List>
           </Slide>
 
           {/* Adicionar história da web e história do react na apresentação */}
@@ -542,6 +640,10 @@ export default class Presentation extends React.Component {
           {/* Adicionar referências na apresentação e no github */}
 
           {/* Buscar e instalar um componente do npm */}
+
+          <Slide>
+
+          </Slide>
         </Deck>
     );
   }
