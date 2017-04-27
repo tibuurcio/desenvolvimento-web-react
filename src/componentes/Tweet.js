@@ -7,7 +7,7 @@ class Tweet extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          likes: this.props.tweet.likes.total,
+          likes: this.props.tweet.likes,
           jaDeuLike: false,
       };
   }
@@ -24,9 +24,7 @@ class Tweet extends React.Component {
 
     return (
         <div className="tweet-div">
-            <Avatar 
-                tamanhoImagem={this.props.tamanhoAvatar}
-                usuario={tweet.usuario}/>
+            <Avatar usuario={tweet.usuario}/>
 
             <p>{tweet.texto}</p>
 
