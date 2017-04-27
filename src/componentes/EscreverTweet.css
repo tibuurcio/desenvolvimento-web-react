@@ -1,0 +1,29 @@
+.escrever-tweet-container {
+  width: 450px;
+  margin: 10px auto;
+}
+
+.escrever-tweet-titulo {
+  text-align: center;
+}
+
+.tweet-input-container {
+  margin: 10px;
+}
+
+.tweet-input {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.tweet-textarea {
+  height: 150px;
+}
+
+.enviar-tweet-btn {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
