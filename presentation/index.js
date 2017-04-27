@@ -72,6 +72,7 @@ const theme = createTheme({
 
 import { buttonCode } from "../assets/code/playground.codes";
 import { jsxExample } from "../assets/code/playground.codes";
+import { clockExample } from "../assets/code/playground.codes";
 
 export default class Presentation extends React.Component {
   render() {
@@ -642,25 +643,78 @@ export default class Presentation extends React.Component {
           <Slide transition={["slide", "fade"]}>
             <Heading size={4} textColor="white">Dia 3</Heading>
             <List>
-              <ListItem textColor="white" textSize={24}>Exemplos de componentes</ListItem>
               <ListItem textColor="white" textSize={24}>Por trás do create-react-app</ListItem>
-              <ListItem textColor="white" textSize={24}>Requisições http</ListItem>
+              <ListItem textColor="white" textSize={24}>Requisições HTTP</ListItem>
+              <ListItem textColor="white" textSize={24}>Ciclo de vida de um componente React</ListItem>
               <ListItem textColor="white" textSize={24}>Requisitando nossos tweets do servidor</ListItem>
+              <ListItem textColor="white" textSize={24}>Atualizando a quantidade de likes no servidor</ListItem>
+              <ListItem textColor="white" textSize={24}>Criando um componente para enviar novos tweets</ListItem>
               <ListItem textColor="white" textSize={24}>Criando o componente para enviar novos tweets</ListItem>
             </List>
           </Slide>
 
-          {/* Adicionar explicação do create-react-app */}
+          <Slide transition={["spin", "fade", "zoom"]} bgColor="secondary">
+            <Heading size={6} textColor="white">Por trás do create-react-app</Heading>
+            <br/>
+            <Layout>
+              <Fill>
+                  <Appear>
+                    <Text textSize={34} textColor="white">
+                      Bundler (Webpack)</Text></Appear>
+              </Fill>
+              <Fill>
+                <Appear>
+                  <Text textSize={34} textColor="white">
+                    Compilador (Babel)</Text></Appear>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary">
+            <Heading size={3} textColor="white" textFont="lobster">Ciclo de vida de um componente</Heading>
+          </Slide>
+
+          <Slide>
+            <ComponentPlayground theme="dark" code={clockExample}/>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary">
+            <Heading size={5} textColor="white" textFont="lobster">Componente vai montar</Heading>
+            <List>
+              <Text textAlign="center" textSize={30} textColor="white">constructor</Text>
+              <Text textAlign="center" textSize={30} textColor="white">componentWillMount</Text>
+              <Text textAlign="center" textSize={30} textColor="white">render</Text>
+              <Text textAlign="center" textSize={30} textColor="white">componentDidMount</Text>
+            </List>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary">
+            <Heading size={5} textColor="white" textFont="lobster">Componente vai atualizar</Heading>
+            <List>
+              <Text textSize={30} textAlign="center" textColor="white">componentWillReceiveProps</Text>
+              <Text textSize={30} textAlign="center" textColor="white">shouldComponentUpdate</Text>
+              <Text textSize={30} textAlign="center" textColor="white">componentWillUpdate</Text>
+              <Text textSize={30} textAlign="center" textColor="white">render</Text>
+              <Text textSize={30} textAlign="center" textColor="white">componentDidMount</Text>
+            </List>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary">
+            <Heading size={5} textColor="white" textFont="lobster">Componente vai desmontar</Heading>
+            <List>
+              <Text textSize={30} textAlign="center" textColor="white">componenteWillUnmount</Text>
+            </List>
+          </Slide>
+
+          <Slide transition={["spin", "zoom", "fade"]} bgColor="secondary">
+            <Heading size={3} textColor="white" textFont="lobster">Requisitando Tweets do servidor com a biblioteca Axios</Heading>
+          </Slide>
 
           {/* Implementar componentes interessantes na apresentação */}
 
           {/* Adicionar referências na apresentação e no github */}
 
           {/* Buscar e instalar um componente do npm */}
-
-          <Slide>
-
-          </Slide>
         </Deck>
     );
   }
