@@ -19,10 +19,8 @@ class App extends React.Component {
 	}
 
 	carregarTweets(resposta) {
-		console.log(resposta);
-		console.log(resposta.data);
-		const listaTweets = resposta.data.map(function(tweet) {
-			return <Tweet tweet={tweet}/>
+		const listaTweets = resposta.data.map(function(cadaTweet) {
+			return <Tweet tweet={cadaTweet}/>
 		});
 		this.setState({ listaTweets: listaTweets });
 	}
